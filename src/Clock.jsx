@@ -24,7 +24,7 @@ export default function Clock(props) {
     // Render date value that is stored in state
     <>
       <p>
-        {props.timeZone}{" "}
+        {props.timeZone} :
         {date.toLocaleString("en-GB", { timeZone: `${props.timeZone}` })}
       </p>
     </>
