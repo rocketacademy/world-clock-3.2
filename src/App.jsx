@@ -1,7 +1,7 @@
 import logo from "/logo.png";
 import "./App.css";
 import Clock from "./Clock";
-
+// App is the root component
 function App() {
   return (
     <>
