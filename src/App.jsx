@@ -7,7 +7,7 @@ function App() {
       <div>
         <img src={logo} className="logo" alt="Rocket logo" />
       </div>
-      <h1>World Clock</h1>
+      <h1>World Clock - Rocket</h1>
       <div className="card">
         <Clock timeZone="Asia/Singapore" />
         <Clock timeZone="Europe/London" />
