@@ -10,7 +10,9 @@ function App() {
       </div>
       <h1>World Clock</h1>
       <div className="card">
-        <Clock />
+        <Clock timeZone="Asia/Singapore" />
+        <Clock timeZone="Europe/London" />
+        <Clock timeZone="Asia/Tokyo" />
       </div>
     </>
   );
