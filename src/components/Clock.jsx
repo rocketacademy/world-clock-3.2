@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {Button} from 'react-bootstrap'
 
 function Clock(props) {
 
@@ -14,6 +15,7 @@ function Clock(props) {
   }
 
   const [clock, setClock] = useState(new Date().toLocaleString('en-GB', { timeZone: timezone}));
+  const [showClock, setShowClock] = useState(true);
 
 
   const clockstyle = {
@@ -22,16 +24,28 @@ function Clock(props) {
   };
 
   useEffect(() => {
-    setInterval(() => {
+    const tick = () => {
       setClock(new Date().toLocaleString("en-GB", {timeZone: timezone}));
-    }, 1000);
+    };
+    
+    const timer = setInterval(tick, 1000);
+
+    return () => {
+      clearInterval(timer);
+    }
   });
 
   return (
     <>
-      <div className='clocks' style={clockstyle}>
-        {clock}
+      <div className="clocks" style={clockstyle}>
+        {showClock ? clock : <h6>Clock Hidden</h6>}
       </div>
+      <Button variant="primary" onClick={() => setShowClock(true)}> 
+        Show Clock
+      </Button>
+      <Button variant="danger" onClick={() => setShowClock(false)}>
+        Hide Clock
+      </Button>
     </>
   );
 }
