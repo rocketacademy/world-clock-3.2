@@ -1,20 +1,38 @@
-import logo from "/logo.png";
 import "./App.css";
+import { useState, useEffect } from "react";
+import Clock from "./Clock.jsx";
+import { Container, Row, Col } from "react-bootstrap";
+import { propTypes } from "react-bootstrap/esm/Image.js";
 
-function App() {
+export default function App() {
   return (
     <>
-      <div>
-        <img src={logo} className="logo" alt="Rocket logo" />
-      </div>
       <h1>World Clock</h1>
       <div className="card">
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <Container>
+          <Row>
+            <Col>
+              <p class="text-primary">Country</p>
+            </Col>
+            <Col>
+              <p class="text-warning">Local Time</p>
+            </Col>
+          </Row>
+          <Col>
+            <Row>
+              <Col>
+                <Clock timeZone="Singapore" />
+              </Col>
+            </Row>
+            <Row>
+              <Clock timeZone="Egypt" />
+            </Row>
+            <Row>
+              <Clock timeZone="Australia/Sydney" />
+            </Row>
+          </Col>
+        </Container>
       </div>
     </>
   );
 }
-
-export default App;
