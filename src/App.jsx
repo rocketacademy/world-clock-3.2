@@ -1,8 +1,8 @@
 import logo from "/logo.png";
 import "./App.css";
-import Clock from "./Clock";
-import Container from "react-bootstrap/Container";
-// import Timezone from "./Timezones";
+// import Clock from "./Clock";
+// import Container from "react-bootstrap/Container";
+import Timezone from "./Timezones";
 // import { useEffect } from "react";
 
 // question: How to get access to data of Timezone's Dropdown.Item clicks from App, so that I can use it to do 2 things:
@@ -17,15 +17,8 @@ function App() {
         <img src={logo} className="logo" alt="Rocket logo" />
       </div>
       <h1>World Clock</h1>
-      <Container className="card">
-        <Clock timeZone={"America/Los_Angeles"} />
-        <Clock timeZone={"Europe/Prague"} />
-        <Clock timeZone={"Asia/Kabul"} />
-        <Clock timeZone={"Asia/Ho_Chi_Minh"} />
-        <Clock timeZone={"Asia/Singapore"} />
-      </Container>
 
-      {/* <Timezone/> */}
+      <Timezone />
     </>
   );
 }
