@@ -1,7 +1,8 @@
 import logo from "/logo.png";
 import "./App.css";
+import Clock from "./Clock.jsx";
 
-function App() {
+export default function App() {
   return (
     <>
       <div>
@@ -9,12 +10,10 @@ function App() {
       </div>
       <h1>World Clock</h1>
       <div className="card">
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <Clock timeZone="Asia/Singapore" />
+        <Clock timeZone="America/New_York" />
+        <Clock timeZone="Asia/Shanghai" />
       </div>
     </>
   );
 }
-
-export default App;
